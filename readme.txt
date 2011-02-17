@@ -1,9 +1,9 @@
 === WP-PostViews ===
-Contributors: GamerZ, Namics AG
+Contributors: GamerZ
 Donate link: http://lesterchan.net/wordpress
 Tags: views, hits, counter, postviews
 Requires at least: 2.8
-Stable tag: 1.5.1
+Stable tag: 1.50
 
 Enables you to display how many times a post/page had been viewed.
 

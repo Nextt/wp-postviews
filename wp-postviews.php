@@ -3,8 +3,8 @@
 Plugin Name: WP-PostViews
 Plugin URI: http://lesterchan.net/portfolio/programming/php/
 Description: Enables you to display how many times a post/page had been viewed. Modified by <a href="http://DPotter.net/Technical/" title="David's Technical Musings">David Potter</a> to include options for when and where to display view counts.
-Version: 1.50
-Author: Lester 'GaMerZ' Chan
+Version: 1.5.1
+Author: Lester 'GaMerZ' Chan, Namics AG
 Author URI: http://lesterchan.net
 */
 
