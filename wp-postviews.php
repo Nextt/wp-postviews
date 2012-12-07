@@ -186,7 +186,7 @@ if(!function_exists('get_least_viewed')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -194,7 +194,20 @@ if(!function_exists('get_least_viewed')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}			
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
@@ -229,7 +242,7 @@ if(!function_exists('get_most_viewed')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -237,7 +250,20 @@ if(!function_exists('get_most_viewed')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}			
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
@@ -277,7 +303,7 @@ if(!function_exists('get_least_viewed_category')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -285,7 +311,20 @@ if(!function_exists('get_least_viewed_category')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
@@ -325,7 +364,7 @@ if(!function_exists('get_most_viewed_category')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -333,7 +372,20 @@ if(!function_exists('get_most_viewed_category')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
@@ -373,7 +425,7 @@ if(!function_exists('get_most_viewed_tag')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -381,7 +433,20 @@ if(!function_exists('get_most_viewed_tag')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
@@ -421,7 +486,7 @@ if(!function_exists('get_least_viewed_tag')) {
 				if($chars > 0) {
 					$post_title = snippet_text($post_title, $chars);
 				}
-				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				/* $post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
@@ -429,7 +494,20 @@ if(!function_exists('get_least_viewed_tag')) {
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink(), $temp);
+				$output .= $temp; */
+
+				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
+				$post_content = get_the_content();
+				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$temp = stripslashes($views_options['most_viewed_template']);
+				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
+				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
+				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
+				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
+				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
 				$output .= $temp;
+
 			}
 		} else {
 			$output = '<li>'.__('N/A', 'wp-postviews').'</li>'."\n";
