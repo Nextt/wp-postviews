@@ -721,6 +721,8 @@ function postviews_page_most_stats($content) {
 increment_views();
 function increment_views() {
 	global $wpdb;
+	if(!isset($_GET['postviews_id']))
+		return false;
 	$post_id = intval($_GET['postviews_id']);
 	if($post_id > 0 && defined('WP_CACHE') && WP_CACHE) {
 		$post_views = get_post_custom($post_id);
