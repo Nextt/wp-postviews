@@ -227,7 +227,7 @@ if(!function_exists('get_least_viewed')) {
 
 ### Function: Display Most Viewed Page/Post
 if(!function_exists('get_most_viewed')) {
-	function get_most_viewed($mode = '', $limit = 10, $chars = 0, $display = true) {
+	function get_most_viewed($mode = '', $limit = 10, $chars = 0, $display = true, $thumbsize = 'post-thumbnail') {
 		global $wpdb, $post;
 		$views_options = get_option('views_options');
 		$where = '';
@@ -258,14 +258,14 @@ if(!function_exists('get_most_viewed')) {
 
 				$post_excerpt = views_post_excerpt($post->post_excerpt, $post->post_content, $post->post_password, $chars);
 				$post_content = get_the_content();
-				$thumbnail = get_post_meta($post->ID,"bigthumb",true);
+				$thumbnail = get_post_meta($post->ID,"",true);
 				$temp = stripslashes($views_options['most_viewed_template']);
 				$temp = str_replace("%VIEW_COUNT%", number_format_i18n($post_views), $temp);
 				$temp = str_replace("%POST_TITLE%", $post_title, $temp);
 				$temp = str_replace("%POST_EXCERPT%", $post_excerpt, $temp);
 				$temp = str_replace("%POST_CONTENT%", $post->post_content, $temp);
 				$temp = str_replace("%POST_URL%", get_permalink($post), $temp);
-				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID), $temp);
+				$temp = str_replace("%THUMBNAIL%", get_the_post_thumbnail($post->ID, $thumbsize), $temp);
 				$output .= $temp;
 
 			}
